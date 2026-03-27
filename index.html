@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Anuriddhi Medicare | Quality Healthcare Solutions</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    background: #f8fafd;
+    overflow-x: hidden;
+}
+
+/* ===== NAVBAR ===== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background: rgba(255,255,255,0.98);
+    backdrop-filter: blur(2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.2s;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 800;
+    font-size: 1.25rem;
+    color: #0a3d91;
+    letter-spacing: -0.3px;
+}
+
+.logo img {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+    background: #eef3ff;
+    border-radius: 14px;
+    padding: 6px;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+nav a {
+    text-decoration: none;
+    margin: 0 6px;
+    padding: 8px 18px;
+    color: #0a3d91;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+    font-size: 1rem;
+    border-radius: 40px;
+    background: transparent;
+}
+
+nav a:hover {
+    background: #ff4d4d20;
+    color: #ff4d4d;
+}
+
+/* ===== SECTION LOGIC ===== */
+.section {
+    display: none;
+    min-height: 80vh;
+    animation: fadeSlide 0.35s cubic-bezier(0.2, 0.9, 0.4, 1);
+}
+
+.active {
+    display: block;
+}
+
+@keyframes fadeSlide {
+    from { opacity: 0; transform: translateY(10px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3rem 6%;
+    background: linear-gradient(130deg, #0b2b5c, #1c6ef0);
+    color: white;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.hero-text {
+    flex: 1.2;
+    min-width: 260px;
+}
+
+.hero-text h1 {
+    font-size: clamp(2.4rem, 6vw, 4.8rem);
+    line-height: 1.2;
+    font-weight: 800;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.hero-text p {
+    font-size: clamp(1rem, 3vw, 1.4rem);
+    margin: 1.5rem 0;
+    opacity: 0.95;
+}
+
+.hero-features {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+}
+
+.feature-item {
+    padding: 1.8rem 1rem;
+    border-radius: 2rem;
+    text-align: center;
+    transition: transform 0.2s ease;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(4px);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.1);
+}
+
+.feature-item:hover {
+    transform: translateY(-6px);
+    background: rgba(255,255,255,0.22);
+}
+
+.feature-item h3 {
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+    font-weight: 800;
+}
+
+.btn-secondary {
+    background: white;
+    color: #0a3d91;
+    padding: 14px 32px;
+    border-radius: 50px;
+    border: none;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.2s;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+
+.btn-secondary:hover {
+    background: #ffeedd;
+    transform: scale(1.02);
+}
+
+/* ===== PRODUCTS SECTION WITH IMAGES ===== */
+.products {
+    padding: 4rem 5%;
+    background: #f5f9ff;
+    text-align: center;
+}
+
+.products h2 {
+    color: #0a3d91;
+    margin-bottom: 1rem;
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 2rem;
+    margin-top: 2.5rem;
+}
+
+.card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 2rem;
+    box-shadow: 0 16px 28px rgba(0, 0, 0, 0.04);
+    transition: all 0.25s;
+    border: 1px solid rgba(10, 61, 145, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 24px 32px rgba(0, 0, 0, 0.08);
+}
+
+.product-img {
+    width: 100%;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #e6f0ff, #f0f4fa);
+    border-radius: 1.2rem;
+    margin-bottom: 0.5rem;
+    font-size: 3.5rem;
+    font-weight: normal;
+}
+
+.card h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1e2f4e;
+    margin: 0.25rem 0;
+}
+
+.card p {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0a3d91;
+    margin: 0.25rem 0;
+}
+
+.card input {
+    width: 100px;
+    padding: 10px;
+    margin: 0.5rem auto;
+    border: 1.5px solid #dce5f0;
+    border-radius: 40px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.buy-btn {
+    background: #0a3d91;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: 0.2s;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.buy-btn:hover {
+    background: #ff4d4d;
+    transform: scale(0.98);
+}
+
+.total {
+    margin-top: 0.5rem;
+    font-weight: 700;
+    color: #e67e22;
+    font-size: 0.9rem;
+}
+
+/* ===== ABOUT SECTION ===== */
+.about {
+    padding: 4rem 6%;
+    background: white;
+    line-height: 1.7;
+}
+
+.about h2 {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    color: #0a3d91;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.about-subtitle {
+    text-align: center;
+    color: #4a627a;
+    margin-bottom: 2.5rem;
+    font-size: 1.1rem;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.about-card {
+    background: #f8fafd;
+    padding: 2rem 1.5rem;
+    border-radius: 1.5rem;
+    text-align: center;
+    transition: 0.2s;
+    border: 1px solid #e2edf7;
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.05);
+}
+
+.about-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #0a3d91;
+}
+
+.about-card h3 {
+    color: #0a3d91;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+.about-card p {
+    color: #2c3e50;
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+.about-text {
+    max-width: 1100px;
+    margin: 1.5rem auto;
+    font-size: 1rem;
+    color: #1e2f3e;
+    text-align: justify;
+}
+
+.director-section {
+    background: linear-gradient(115deg, #eef3fc, #ffffff);
+    padding: 2rem;
+    border-radius: 2rem;
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.director-card {
+    flex: 1;
+    min-width: 220px;
+    text-align: center;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 1.5rem;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.03);
+}
+
+.director-card h4 {
+    color: #0a3d91;
+    font-size: 1.3rem;
+    margin: 0.5rem 0;
+}
+
+.director-card p {
+    color: #4a627a;
+}
+
+/* ===== CONTACT SECTION ===== */
+.contact {
+    padding: 4rem 5%;
+    background: #ecf3fa;
+}
+
+.contact-box {
+    max-width: 620px;
+    margin: 0 auto;
+    background: white;
+    padding: 2rem 2rem 2.5rem;
+    border-radius: 2rem;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.05);
+}
+
+.contact-box h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #0a3d91;
+    font-size: 1.9rem;
+}
+
+.contact-box input, .contact-box textarea {
+    width: 100%;
+    padding: 14px 18px;
+    margin: 10px 0;
+    border-radius: 60px;
+    border: 1px solid #cbdde9;
+    font-size: 1rem;
+    background: #fff;
+    transition: 0.2s;
+}
+
+.contact-box textarea {
+    border-radius: 24px;
+    resize: vertical;
+}
+
+.contact-box input:focus, .contact-box textarea:focus {
+    outline: none;
+    border-color: #0a3d91;
+    box-shadow: 0 0 0 3px rgba(10,61,145,0.2);
+}
+
+.contact-box button {
+    width: 100%;
+    padding: 14px;
+    background: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 60px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.contact-box button:hover {
+    background: #1e8f50;
+    transform: scale(1.01);
+}
+
+.success {
+    display: none;
+    color: #2ecc71;
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: bold;
+    background: #e3f7ec;
+    padding: 10px;
+    border-radius: 40px;
+}
+
+.info {
+    margin-top: 1.8rem;
+    font-size: 0.9rem;
+    color: #2c3e50;
+    border-top: 1px solid #e2eaf1;
+    padding-top: 1.5rem;
+    text-align: center;
+}
+
+.info p {
+    margin: 8px 0;
+}
+
+/* ===== NEWS TICKER ===== */
+.news-bar {
+    width: 100%;
+    background: #0a2e5e;
+    color: white;
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+    border-top: 2px solid #ffaa44;
+    transition: all 0.3s ease;
+}
+
+.news-bar.hidden {
+    display: none;
+}
+
+.news-title {
+    background: #ff4d4d;
+    padding: 0.8rem 1.8rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+}
+
+.news-container {
+    flex: 1;
+    overflow-x: auto;
+    padding: 0 1rem;
+    scrollbar-width: thin;
+}
+
+.news-static-list {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    padding: 0.8rem 0.5rem;
+    white-space: nowrap;
+    width: max-content;
+}
+
+.news-static-list span {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.news-static-list span::before {
+    content: "•";
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.news-container::-webkit-scrollbar {
+    height: 4px;
+    background: #1f4973;
+}
+
+.news-container::-webkit-scrollbar-thumb {
+    background: #ffaa66;
+    border-radius: 20px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+    header {
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+    }
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 2.5rem 5%;
+    }
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    }
+    .director-section {
+        flex-direction: column;
+    }
+    nav {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 560px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+    .hero-features {
+        grid-template-columns: 1fr;
+    }
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+    .card h3 {
+        font-size: 1.2rem;
+    }
+    .product-img {
+        height: 130px;
+    }
+    nav a {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%230a3d91'/%3E%3Cpath fill='white' d='M50 25 L58 40 L75 42 L63 53 L68 70 L50 60 L32 70 L37 53 L25 42 L42 40 Z'/%3E%3C/svg%3E" alt="Anuriddhi Icon">
+        <span>ANURIDDHI MEDICARE</span>
+    </div>
+    <nav>
+        <a onclick="showPage('home')">Home</a>
+        <a onclick="showPage('products')">Products</a>
+        <a onclick="showPage('about')">About</a>
+        <a onclick="showPage('contact')">Contact</a>
+    </nav>
+</header>
+
+<!-- HOME SECTION -->
+<div id="home" class="section active">
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Awareness Is Power</h1>
+            <p>We Care With Medicines — authentic, trusted, and delivered with compassion.</p>
+            <button class="btn-secondary" onclick="showPage('products')">Explore Products →</button>
+        </div>
+        <div class="hero-features">
+            <div class="feature-item"><h3>100%</h3><p>Genuine Medicine</p></div>
+            <div class="feature-item" style="background:#ff4d4d;"><h3>24/7</h3><p>Expert Support</p></div>
+            <div class="feature-item" style="background:white; color:#0a3d91;"><h3>Fast</h3><p>Home Delivery</p></div>
+            <div class="feature-item"><h3>Trusted</h3><p>Pharmacists</p></div>
+        </div>
+    </section>
+</div>
+
+<!-- PRODUCTS SECTION -->
+<div id="products" class="section">
+    <section class="products">
+        <h2>Our Healthcare Essentials</h2>
+        <div class="product-grid" id="productListing"></div>
+    </section>
+</div>
+
+<!-- ABOUT SECTION -->
+<div id="about" class="section">
+    <section class="about">
+        <h2>About Anuriddhi Medicare</h2>
+        <div class="about-subtitle">"We Care with Medicine" — Your Health, Our Priority</div>
+        
+        <div class="about-grid">
+            <div class="about-card">
+                <div class="about-icon">🏥</div>
+                <h3>Our Mission</h3>
+                <p>To provide accessible, affordable, and high-quality healthcare solutions that improve lives across communities with trust and integrity.</p>
+            </div>
+            <div class="about-card">
+                <div class="about-icon">⭐</div>
+                <h3>Our Vision</h3>
+                <p>To become India's most trusted healthcare partner by blending innovation, compassion, and excellence in pharmaceutical care.</p>
+            </div>
+            <div class="about-card">
+                <div class="about-icon">💎</div>
+                <h3>Core Values</h3>
+                <p>Integrity, Empathy, Quality First, Customer-Centric Approach, and Continuous Innovation in healthcare.</p>
+            </div>
+        </div>
+        
+        <p class="about-text"><b>Anuriddhi Medicare Pvt. Ltd.</b> was established in <b>2025</b> with a clear vision of improving access to quality medicines and healthcare solutions. Since its foundation, the organization has been committed to serving society with trust, care, and responsibility. Built on strong ethical values and customer-first thinking, Anuriddhi Medicare aims to become a reliable name in the medical and healthcare sector.</p>
+        
+        <p class="about-text">The company is proudly led by its directors, <b>Tushar Kant Tripathi</b> and <b>Pushkar Tripathi</b>, who bring forward a shared vision of innovation, service, and excellence. Their leadership focuses on creating a system where quality healthcare products are easily accessible and affordable to people from all sections of society. With a deep understanding of healthcare needs, they continue to guide the organization toward sustainable growth and impactful service.</p>
+        
+        <p class="about-text">At Anuriddhi Medicare, our core belief is reflected in our motto, <b>“We Care with Medicine.”</b> This is not just a statement, but a promise that drives every aspect of our work. From sourcing genuine pharmaceutical products to ensuring proper distribution and customer satisfaction, we maintain strict quality standards and ethical practices. Our goal is to support better health outcomes by providing reliable medicines and healthcare essentials.</p>
+        
+        <div class="director-section">
+            <div class="director-card">
+                <div class="about-icon">👨‍⚕️</div>
+                <h4>Tushar Kant Tripathi</h4>
+                <p>Co-Founder & Director</p>
+                <p style="font-size:0.85rem; margin-top:5px;">Leading with vision for accessible healthcare</p>
+            </div>
+            <div class="director-card">
+                <div class="about-icon">👨‍💼</div>
+                <h4>Pushkar Tripathi</h4>
+                <p>Co-Founder & Director</p>
+                <p style="font-size:0.85rem; margin-top:5px;">Driving innovation & quality excellence</p>
+            </div>
+        </div>
+        
+        <p class="about-text">We offer a wide range of medical products including essential medicines, health supplements, medical devices, and daily healthcare items. Every product is carefully selected to ensure safety, effectiveness, and compliance with industry standards. We continuously work to expand our product range so that customers can find everything they need in one place.</p>
+        
+        <p class="about-text">Customer trust is the foundation of our success. We believe in building long-term relationships by delivering consistent quality, transparent services, and responsive support. Our team is dedicated to understanding customer needs and providing the right solutions with care and professionalism. Whether it is a small requirement or a large supply, we treat every request with equal importance.</p>
+        
+        <p class="about-text">Looking ahead, Anuriddhi Medicare Pvt. Ltd. aims to grow into a leading healthcare provider by adopting modern technologies, expanding its reach, and maintaining high service standards. We are committed to contributing positively to society by promoting health awareness and ensuring the availability of essential medicines. With a strong foundation, visionary leadership, and a clear mission, Anuriddhi Medicare continues its journey toward excellence—delivering care, building trust, and making healthcare better for everyone.</p>
+    </section>
+</div>
+
+<!-- CONTACT SECTION -->
+<div id="contact" class="section">
+    <section class="contact">
+        <div class="contact-box">
+            <h2>Get in Touch</h2>
+            <input type="text" id="name" placeholder="Full Name *" autocomplete="name">
+            <input type="email" id="email" placeholder="Email Address *" autocomplete="email">
+            <input type="tel" id="phone" placeholder="Phone Number">
+            <textarea id="Feedback" placeholder="Your Message / Feedback *" rows="4"></textarea>
+            <button onclick="submitForm()">Send Secure Message</button>
+            <p class="success" id="successMsg">Thank you! Your message has been received. We'll connect shortly.</p>
+            <div class="info">
+                <p><b>Corporate Office:</b> Ward No-05, Chakiya Chandauli, Uttar Pradesh, India</p>
+                <p><b>Email:</b> ampl@anuriddhi.com</p>
+                <p><b>Helpline:</b> +91 9532436007</p>
+                <p><b>Support:</b> 9 AM – 8 PM (Mon-Sat)</p>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- NEWS TICKER - Will be hidden on non-home pages -->
+<div class="news-bar" id="newsTicker">
+    <div class="news-title">LATEST UPDATES</div>
+    <div class="news-container">
+        <div class="news-static-list">
+            <span>New stock of Vitamin & immunity boosters</span>
+            <span>Free home delivery on orders above ₹499</span>
+            <span>Free health camp on 5th April – Chakiya center</span>
+            <span>24/7 pharmacist consultation now live</span>
+            <span>Up to 15% off on BP monitors & glucose meters</span>
+            <span>ISO certified medicines & medical devices</span>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Product database with clean icons
+    const products = [
+        { name: "Paracetamol 500mg", price: 50, img: "💊" },
+        { name: "Vitamin C + Zinc", price: 120, img: "🍊" },
+        { name: "Hand Sanitizer", price: 80, img: "🧴" },
+        { name: "Digital Thermometer", price: 250, img: "🌡️" },
+        { name: "3 Ply Face Mask", price: 100, img: "😷" },
+        { name: "First Aid Kit", price: 350, img: "🩹" },
+        { name: "BP Monitor", price: 1500, img: "❤️" },
+        { name: "Glucometer Kit", price: 900, img: "🩸" },
+        { name: "Amoxicillin", price: 200, img: "💊" },
+        { name: "Pain Relief Spray", price: 300, img: "💨" },
+        { name: "Nitrile Gloves", price: 150, img: "🧤" },
+        { name: "Herbal Cough Syrup", price: 180, img: "🌿" },
+        { name: "Omega-3 Supplement", price: 450, img: "🐟" },
+        { name: "Heating Pad", price: 650, img: "🔥" },
+        { name: "Pulse Oximeter", price: 1200, img: "📊" }
+    ];
+
+    function renderProductGrid() {
+        const container = document.getElementById('productListing');
+        if (!container) return;
+        
+        let html = '';
+        products.forEach((prod, idx) => {
+            html += `
+                <div class="card">
+                    <div class="product-img">${prod.img}</div>
+                    <h3>${escapeHtml(prod.name)}</h3>
+                    <p>₹ ${prod.price}</p>
+                    <input type="number" min="1" value="1" id="qty_${idx}" step="1">
+                    <button class="buy-btn" data-idx="${idx}">Buy Now</button>
+                    <div id="total_display_${idx}" class="total"></div>
+                </div>
+            `;
+        });
+        container.innerHTML = html;
+
+        document.querySelectorAll('.buy-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                const idx = parseInt(this.getAttribute('data-idx'));
+                const product = products[idx];
+                const qtyInput = document.getElementById(`qty_${idx}`);
+                let qty = parseInt(qtyInput.value);
+                if (isNaN(qty) || qty <= 0) {
+                    alert("Please enter a valid quantity (minimum 1)");
+                    qtyInput.value = 1;
+                    return;
+                }
+                const totalAmt = product.price * qty;
+                const totalSpan = document.getElementById(`total_display_${idx}`);
+                if (totalSpan) {
+                    totalSpan.innerText = `Total: ₹ ${totalAmt}`;
+                }
+                alert(`Order Confirmed!\nItem: ${product.name}\nQuantity: ${qty}\nTotal Amount: ₹ ${totalAmt}\nOur team will contact you shortly.`);
+            });
+        });
+    }
+
+    function escapeHtml(str) {
+        return str.replace(/[&<>]/g, function(m) {
+            if (m === '&') return '&amp;';
+            if (m === '<') return '&lt;';
+            if (m === '>') return '&gt;';
+            return m;
+        });
+    }
+
+    function showPage(pageId) {
+        const sections = document.querySelectorAll('.section');
+        sections.forEach(sec => sec.classList.remove('active'));
+        const activeSection = document.getElementById(pageId);
+        if (activeSection) {
+            activeSection.classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        
+        // Show/hide news ticker based on current page
+        const newsTicker = document.getElementById('newsTicker');
+        if (newsTicker) {
+            if (pageId === 'home') {
+                newsTicker.classList.remove('hidden');
+            } else {
+                newsTicker.classList.add('hidden');
+            }
+        }
+        
+        if (pageId === 'products') {
+            const container = document.getElementById('productListing');
+            if (container && container.children.length === 0) {
+                renderProductGrid();
+            }
+        }
+    }
+
+    function submitForm() {
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const feedback = document.getElementById("Feedback").value.trim();
+        
+        if (!name) {
+            alert("Please enter your full name.");
+            return;
+        }
+        if (!email) {
+            alert("Please enter your email address.");
+            return;
+        }
+        if (!feedback) {
+            alert("Please write your message or feedback.");
+            return;
+        }
+        const emailPattern = /^[^\s@]+@([^\s@]+\.)+[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+            alert("Please provide a valid email address.");
+            return;
+        }
+        
+        const successMsgDiv = document.getElementById("successMsg");
+        if (successMsgDiv) {
+            successMsgDiv.style.display = "block";
+            setTimeout(() => {
+                successMsgDiv.style.display = "none";
+            }, 4500);
+        }
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("phone").value = "";
+        document.getElementById("Feedback").value = "";
+        
+        const contactBox = document.querySelector('.contact-box');
+        if (contactBox) contactBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    window.showPage = showPage;
+    window.submitForm = submitForm;
+    
+    window.addEventListener('DOMContentLoaded', () => {
+        renderProductGrid();
+        
+        // Initially, news ticker is visible only on home page
+        const newsTicker = document.getElementById('newsTicker');
+        const hash = window.location.hash.substring(1);
+        if (hash === 'products' || hash === 'about' || hash === 'contact') {
+            if (newsTicker) newsTicker.classList.add('hidden');
+            showPage(hash);
+        } else {
+            if (newsTicker) newsTicker.classList.remove('hidden');
+            showPage('home');
+        }
+    });
+</script>
+</body>
+</html>
